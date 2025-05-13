@@ -16,7 +16,16 @@ print(df.head(10))
 #sns.histplot(df.Weight)
 #plt.show()
 
-sns.histplot(df.query('Gender=="Male"').Weight)
-plt.show()
-sns.histplot(df.query('Gender=="Female"').Weight)
-plt.show()
+# sns.histplot(df.query('Gender=="Male"').Weight)
+# plt.show()
+# sns.histplot(df.query('Gender=="Female"').Weight)
+# plt.show()
+
+df = pd.get_dummies(df)     #usuwam dane nienumeryczne
+print(df)
+
+del df["Gender_Male"]       #usuwam kolumnę Gender_Male bo dane są binarne Female lub Male
+print(df)
+
+df = df.rename(columns={"Gender_Female" : "Gender"})      # zamieniam nazwę kolumny Gender_Female na Gender ==> FALSE = Facet, TRUE = KOBIETA
+
