@@ -34,3 +34,5 @@ model = LinearRegression()
 model.fit(df[['Weight', 'Gender']], df['Weight'])
 
 print(f'Wspolczynnik kierunkowy: {model.coef_}/nWyraz Wolny: {model.intercept_}')
+
+print(f'Weight = Height * {model.coef_[0]} + Gender * {model.coef_[1] + model.intercept_}')
