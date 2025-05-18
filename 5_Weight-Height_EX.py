@@ -2,6 +2,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.linear_model import LinearRegression
 
 df = pd.read_csv('weight-height_spaces.csv')
 print(df)
@@ -29,3 +30,7 @@ print(df)
 
 df = df.rename(columns={"Gender_Female" : "Gender"})      # zamieniam nazwę kolumny Gender_Female na Gender ==> FALSE = Facet, TRUE = KOBIETA
 
+model = LinearRegression()
+model.fit(df[['Weight', 'Gender']], df['Weight'])
+
+print(f'Wspolczynnik kierunkowy: {model.coef_}/nWyraz Wolny: {model.intercept_}')
