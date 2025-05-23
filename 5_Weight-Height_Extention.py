@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.linear_model import LinearRegression
 
-df = pd.read_csv('weight-height_spaces.csv', delimiter=';')
+df = pd.read_csv('weight-height_spaces.csv', delimiter=',')
 print(df)
 print(type(df))
 
