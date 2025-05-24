@@ -23,4 +23,12 @@ while True:
         print('niepoprawne rozszerzenie')
         counter_a = counter_a + 1   # counter_a += 1 to to samo
         if counter_a == 3:
-            break
+            decission = input('czy przyjac txt? t/n')   # decyzja TAK/NIE
+            if decission == 't':
+                ext_name = 'txt'
+                break
+            else:
+                quit()
+
+full_file_name = file_name+'.'+ext_name
+print(full_file_name)
